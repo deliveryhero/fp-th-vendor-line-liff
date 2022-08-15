@@ -85,6 +85,12 @@
       }
     }, err => console.error(err.code, error.message));
   </script>
+  <script>
+    window.onload=function(){
+      console.log("This onload did run");
+      setTimeout(function(){ window.top.close(); }, 3000);
+    };
+  </script>
 </body>
 
 </html>
