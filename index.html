@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <style>
+  <!-- <style>
     .navbar {
     position: relative;
     }
@@ -40,19 +40,18 @@
         margin-left: -50px !important;  /* 50% of your logo width */
         display: block;
     }
-  </style>
+  </style> -->
 
-  <nav class="navbar navbar-light" style="background-color: #FF2B85;">
     
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: #FF2B85;"> 
       <center>
-      <a class="navbar-brand" href="#">
-        <img src="banner_new.png" alt="" width="250" height="50" class="d-inline-block align-text-top">
-      </a>
+      
+        <img src="banner_new.png" alt="centered image" width="250" height="50" class="center">
+    
     </center>
     </div>
   
-  </nav>
+
 
   <div class="ml-3 mr-3">
     <form method="POST" action="https://script.google.com/macros/s/AKfycbz4GF0Fnf9SZxxkDCGXmBS5ZfZsjHZcOX1R-TUNcFUVA64itoZNy2e2zRdRjDXJJqVtaw/exec">
@@ -86,7 +85,7 @@
   </div>
 
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
@@ -103,7 +102,7 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
-  </script> -->
+  </script>
 </body>
 
 </html>
