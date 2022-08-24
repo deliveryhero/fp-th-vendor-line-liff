@@ -29,7 +29,7 @@
   </script> -->
 </head>
 
-<body>    
+<body style="background-color:#F7C6CC;">    
     <div class="container-fluid" style="background-color: #FF2B85;"> 
       <center>
       
@@ -43,11 +43,14 @@
   <div class="ml-3 mr-3">
     <form method="POST" action="https://script.google.com/macros/s/AKfycbz4GF0Fnf9SZxxkDCGXmBS5ZfZsjHZcOX1R-TUNcFUVA64itoZNy2e2zRdRjDXJJqVtaw/exec">
       <div class="mb-3">
-        <label for="VendorCode" class="form-label">Vendor Code</label>
+        <label for="VendorCode" class="form-label">รหัสร้านค้า/vendor code (XXXX)</label>
         <input type="text" class="form-control" name="VendorCode" required minlength="4" maxlength="4">
+        <small class="form-text text-muted">
+          รหัสร้านค้าบนแพลตฟอร์มฟู้ดแพนด้า ตัวอย่างเช่น x3cv วิธีการดูรหัสร้านค้า: เปิดแท็บเล็ต -> เข้าไปที่เมนู 'ตั้งค่า' -> รหัสร้านค้าจะอยู่ในส่วน 'หมายเลขร้านบนแพลตฟอร์ม'
+        </small>
       </div>
       <div class="mb-3">
-        <label for="VendorMobile" class="form-label">Mobile Number</label>
+        <label for="VendorMobile" class="form-label">เบอร์มือถือ/mobile number</label>
         <input type="text" class="form-control" name="VendorMobile" required>
       </div>
       <div class="mb-3">
@@ -65,7 +68,7 @@
     <!-- </br> -->
       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
       <center>
-      <input type="image" name="submit" src="Button-Example.png" border="0" alt="Submit" style="width: 130px;height: 50px;"/>
+      <input type="image" name="submit" src="Button-Example-thai.png" border="0" alt="Submit" style="width: 130px;height: 50px;"/>
     </center>
 
     </form>
