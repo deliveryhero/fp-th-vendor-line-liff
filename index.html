@@ -54,7 +54,7 @@
       </div>
       <div class="mb-3">
         <label for="VendorMobile" class="form-label">เบอร์มือถือ/mobile number</label>
-        <input type="number" class="form-control" name="VendorMobile" required min="10" max="10">
+        <input type="text" class="form-control" name="VendorMobile" pattern="\d*" required minlength="10" maxlength="10">
         <div class="invalid-feedback">
           กรุณากรอกเบอร์มือถือตัวเลข 10 หลัก
         </div>
