@@ -46,7 +46,7 @@
         <label for="VendorCode" class="form-label">รหัสร้านค้า/vendor code (XXXX)</label>
         <input type="text" class="form-control" name="VendorCode" required minlength="4" maxlength="4">
         <div class="invalid-feedback">
-          กรุณากรอกข้อมูลในช่องนี้และความยาวควรเป็น 4 ตัวอักษร
+          กรุณากรอกรหัสร้านค้าความยาว 4 ตัวอักษร
         </div>
         <small class="form-text text-muted">
           รหัสร้านค้าบนแพลตฟอร์มฟู้ดแพนด้า ตัวอย่างเช่น x3cv วิธีการดูรหัสร้านค้า: เปิดแท็บเล็ต -> เข้าไปที่เมนู 'ตั้งค่า' -> รหัสร้านค้าจะอยู่ในส่วน 'หมายเลขร้านบนแพลตฟอร์ม'
@@ -54,10 +54,13 @@
       </div>
       <div class="mb-3">
         <label for="VendorMobile" class="form-label">เบอร์มือถือ/mobile number</label>
-        <input type="text" class="form-control" name="VendorMobile" required>
+        <input type="number" class="form-control" name="VendorMobile" required minlength="10" maxlength="10">
         <div class="invalid-feedback">
-          กรุณากรอกข้อมูลในช่องนี้
+          กรุณากรอกเบอร์มือถือตัวเลข 10 หลัก
         </div>
+        <small class="form-text text-muted">
+          เบอร์มือถือ 10 หลัก ตัวอย่างเช่น 0123456789
+        </small>
       </div>
       <!-- <div class="ml-3 mb-3">
         <input class="form-check-input" type="checkbox" value="yes" id="Agreed" name="Agreed" required>
