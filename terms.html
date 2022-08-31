@@ -28,7 +28,7 @@
   <!-- <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js">
   </script> -->
   <style>
-    #bottom a {
+    #bottom input {
       position: fixed;
       /* right: 10%; */
       bottom: 0%;
@@ -119,8 +119,10 @@
   
   <div id="bottom">
   </br>
-    <!-- <button class="btn btn-success btn-lg btn-block">ฉันเห็นด้วย</button> -->
-    <a id="bot_open" class="btn btn-success btn-lg btn-block" href="index.html" role="button">กลับ</a>
+  <form>
+    <input type="button" class="btn btn-success btn-lg btn-block" value="Go back!" onclick="history.back()">
+  </form>
+    <!-- <a id="bot_open" class="btn btn-success btn-lg btn-block" href="index.html" role="button">กลับ</a> -->
   </div>
 
 </body>
