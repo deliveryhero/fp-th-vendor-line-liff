@@ -41,7 +41,7 @@
 
 
   <div class="ml-3 mr-3">
-    <form method="POST" onSubmit="document.getElementById('submit').disabled=true;"
+    <form method="POST"
       action="https://script.google.com/macros/s/AKfycbz4GF0Fnf9SZxxkDCGXmBS5ZfZsjHZcOX1R-TUNcFUVA64itoZNy2e2zRdRjDXJJqVtaw/exec"
       class="needs-validation" novalidate>
       <div class="mb-3">
@@ -150,6 +150,15 @@
 
     </form>
   </div>
+
+  <script>
+    $("body").on("submit", "form", function () {
+      $(this).submit(function () {
+        return false;
+      });
+      return true;
+    });
+  </script>
 
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
