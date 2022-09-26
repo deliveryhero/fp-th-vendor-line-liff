@@ -29,19 +29,21 @@
   </script> -->
 </head>
 
-<body style="background-color:#F7C6CC;">    
-    <div class="container-fluid" style="background-color: #FF2B85;"> 
-      <center>
-      
-        <img src="banner_new.png" alt="centered image" width="250" height="50" class="center">
-    
+<body style="background-color:#F7C6CC;">
+  <div class="container-fluid" style="background-color: #FF2B85;">
+    <center>
+
+      <img src="banner_new.png" alt="centered image" width="250" height="50" class="center">
+
     </center>
-    </div>
+  </div>
   </br>
 
 
   <div class="ml-3 mr-3">
-    <form method="POST" onSubmit="document.getElementById('submit').disabled=true;" action="https://script.google.com/macros/s/AKfycbz4GF0Fnf9SZxxkDCGXmBS5ZfZsjHZcOX1R-TUNcFUVA64itoZNy2e2zRdRjDXJJqVtaw/exec" class="needs-validation" novalidate>
+    <form method="POST" onSubmit="document.getElementById('submit').disabled=true;"
+      action="https://script.google.com/macros/s/AKfycbz4GF0Fnf9SZxxkDCGXmBS5ZfZsjHZcOX1R-TUNcFUVA64itoZNy2e2zRdRjDXJJqVtaw/exec"
+      class="needs-validation" novalidate>
       <div class="mb-3">
         <label for="VendorCode" class="form-label">รหัสร้านค้า/vendor code (XXXX)</label>
         <input type="text" class="form-control" name="VendorCode" required minlength="4" maxlength="4">
@@ -49,12 +51,14 @@
           กรุณากรอกรหัสร้านค้าความยาว 4 ตัวอักษร
         </div>
         <small class="form-text text-muted">
-          รหัสร้านค้าบนแพลตฟอร์มฟู้ดแพนด้า ตัวอย่างเช่น x3cv วิธีการดูรหัสร้านค้า: เปิดแท็บเล็ต -> เข้าไปที่เมนู 'ตั้งค่า' -> รหัสร้านค้าจะอยู่ในส่วน 'หมายเลขร้านบนแพลตฟอร์ม'
+          รหัสร้านค้าบนแพลตฟอร์มฟู้ดแพนด้า ตัวอย่างเช่น x3cv วิธีการดูรหัสร้านค้า: เปิดแท็บเล็ต -> เข้าไปที่เมนู
+          'ตั้งค่า' -> รหัสร้านค้าจะอยู่ในส่วน 'หมายเลขร้านบนแพลตฟอร์ม'
         </small>
       </div>
       <div class="mb-3">
         <label for="VendorMobile" class="form-label">เบอร์มือถือ/mobile number</label>
-        <input type="text" class="form-control" name="VendorMobile" pattern="\d*" required minlength="10" maxlength="10">
+        <input type="text" class="form-control" name="VendorMobile" pattern="\d*" required minlength="10"
+          maxlength="10">
         <div class="invalid-feedback">
           กรุณากรอกเบอร์มือถือตัวเลข 10 หลัก
         </div>
@@ -62,23 +66,58 @@
           เบอร์มือถือ 10 หลัก ตัวอย่างเช่น 0123456789
         </small>
       </div>
-      <!-- <div class="ml-3 mb-3">
-        <input class="form-check-input" type="checkbox" value="yes" id="Agreed" name="Agreed" required>
-        <label class="form-check-label" for="invalidCheck">
-          ข้าพเจ้าได้อ่านและยอมรับ <a href="terms.html" class="link-primary">ข้อกำหนดและเงื่อนไข</a>ในการยืนยันตัวตน
-       </label>
-      </div> -->
-      <div class="form-group">
+
+      <label for="VendorCode" class="form-label">หน้าที่ของคุณในร้าน (เลือกได้มากกว่า 1 ข้อ) / What is your role in the
+        restaurant? (can select multiple options)</label>
+      <div class="ml-3">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="yes" id="Agreed" name="Agreed" required>
-          <label class="form-check-label" for="invalidCheck">
-            ข้าพเจ้าได้อ่านและยอมรับ <a href="terms.html" class="link-primary">ข้อกำหนดและเงื่อนไข</a>ในการยืนยันตัวตน
-          </label>
-          <div class="invalid-feedback">
-            กรุณายอมรับเงื่อนไขและข้อตกลง
-          </div>
+          <input class="form-check-input checkboxes" name="Owner" type="checkbox" value="Owner"
+            required><label>Owner</label></li>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input checkboxes" name="Manager" type="checkbox" value="Manager"
+            required><label>Manager</label></li>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input checkboxes" id="validationFormCheck4" name="Employee" type="checkbox"
+            value="Employee" required><label>Employee</label></li>
+          <div class="invalid-feedback">โปรดเลือกอย่างน้อย 1 ตัวเลือก</div>
         </div>
       </div>
+
+
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+          var checkboxes = $('.checkboxes');
+          checkboxes.change(function () {
+            if ($('.checkboxes:checked').length > 0) {
+              checkboxes.removeAttr('required');
+            } else {
+              checkboxes.attr('required', 'required');
+            }
+          });
+        });
+      </script>
+
+
+      <label for="VendorCode" class="form-label">คุณคือคนที่ใช้เครื่องแท็บเล็ตของร้านใช่หรือไม่ (เลือก 1 ข้อเท่านั้น) /
+        Are you the store's tablet operator? (select only one option)</label>
+      <div class="ml-3">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="validationFormCheck5" value="yes"
+            name="is_store_tablet_operator" required>
+          <label class="form-check-label" for="validationFormCheck5">ใช่ / Yes</label>
+        </div>
+        <div class="form-check mb-3">
+          <input type="radio" class="form-check-input" id="validationFormCheck6" value="no"
+            name="is_store_tablet_operator" name="radio-stacked2" required>
+          <label class="form-check-label" for="validationFormCheck6">ไม่ใช่ / No</label>
+          <div class="invalid-feedback">โปรดเลือก 1 ตัวเลือก</div>
+        </div>
+      </div>
+
       <div class="mb-3">
         <input type="text" class="visually-hidden" id="LineUserID" name="LineUserID" onchange="XX()">
       </div>
@@ -92,9 +131,22 @@
         <input type="text" class="visually-hidden" id="Email" name="Email" onchange="XX()">
       </div>
 
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="yes" id="Agreed" name="Agreed" required>
+          <label class="form-check-label" for="invalidCheck">
+            ข้าพเจ้าได้อ่านและยอมรับ <a href="terms.html" class="link-primary">ข้อกำหนดและเงื่อนไข</a>ในการยืนยันตัวตน
+          </label>
+          <div class="invalid-feedback">
+            กรุณายอมรับเงื่อนไขและข้อตกลง
+          </div>
+        </div>
+      </div>
+
       <center>
-      <input type="image" id="submit" name="submit" src="Button-Example-thai.png" border="0" alt="Submit" style="width: 130px;height: 50px;"/>
-    </center>
+        <input type="image" id="submit" name="submit" src="Button-Example-thai.png" border="0" alt="Submit"
+          style="width: 130px;height: 50px;" />
+      </center>
 
     </form>
   </div>
@@ -121,14 +173,14 @@
 
   <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
+    (function () {
       'use strict';
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
             if (form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();
@@ -138,7 +190,7 @@
         });
       }, false);
     })();
-    </script>
+  </script>
 
 </body>
 
