@@ -46,7 +46,7 @@
       class="needs-validation" novalidate>
       <div class="mb-3">
         <label for="VendorCode" class="form-label">รหัสร้านค้า/vendor code (XXXX)</label>
-        <input type="text" class="form-control" name="VendorCode" required minlength="4" maxlength="4" pattern="[a-zA-Z]{1,}[0-9]+">
+        <input type="text" class="form-control" name="VendorCode" required minlength="4" maxlength="4" pattern="(?=.*[a-zA-Z])([a-zA-Z0-9]+)">
         <div class="invalid-feedback">
           กรุณากรอกรหัสร้านค้าความยาว 4 ตัวอักษร
         </div>
